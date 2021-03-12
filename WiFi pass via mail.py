@@ -7,6 +7,7 @@ from email.mime.base import MIMEBase
 from email import encoders
 def mail():
     fromaddr = "senders email"
+    frompass = "senders password"
     toaddr = "reciving email"
        
     # instance of MIMEMultipart 
@@ -52,7 +53,7 @@ def mail():
     s.starttls() 
       
     # Authentication 
-    s.login(fromaddr, "senders password") 
+    s.login(fromaddr, frompass) 
       
     # Converts the Multipart msg into a string 
     text = msg.as_string() 
